@@ -26,7 +26,7 @@ export default function SupplyDeliveryPage() {
         eyebrow="Logistics"
         title="Efficient Supply & Delivery"
         copy="Delivery is planned around the agreed terms of each trade — not a one-size schedule."
-        image="/images/trucks.jpg"
+        image="/images/supply-trucks.jpg"
       />
 
       <section className="py-20">
@@ -49,7 +49,7 @@ export default function SupplyDeliveryPage() {
           <FadeIn>
             <div className="img-zoom relative aspect-[4/3] overflow-hidden rounded-sm">
               <Image
-                src="/images/dispatch.jpg"
+                src="/images/supply-dispatch.jpg"
                 alt="Warehouse dispatch of traded goods"
                 fill
                 className="object-cover"
@@ -81,8 +81,8 @@ export default function SupplyDeliveryPage() {
       <section className="py-20">
         <div className="container-page grid gap-5 md:grid-cols-3">
           {[
-            { image: "/images/trucks.jpg", label: "Road transportation" },
-            { image: "/images/warehouse.jpg", label: "Warehouse coordination" },
+            { image: "/images/supply-trucks.jpg", label: "Road transportation" },
+            { image: "/images/supply-warehouse.jpg", label: "Warehouse coordination" },
             { image: "/images/shipping.jpg", label: "Dispatch planning" },
           ].map((item) => (
             <figure key={item.label} className="overflow-hidden rounded-sm">

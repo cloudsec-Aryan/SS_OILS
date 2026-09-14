@@ -39,7 +39,7 @@ export const edibleOils: ProductItem[] = [
     slug: "kachi-ghani-mustard-oil",
     description:
       "Traditionally preferred mustard oil traded for food and commercial requirements.",
-    image: "/images/oil-glass.jpg",
+    image: "/images/kachi-ghani-mustard-oil.jpg",
     category: "oils",
   },
   {
@@ -47,7 +47,7 @@ export const edibleOils: ProductItem[] = [
     slug: "mustard-oil",
     description:
       "A widely traded edible oil sourced according to quality and delivery terms.",
-    image: "/images/oil-bottles.jpg",
+    image: "/images/mustard-oil.jpg",
     category: "oils",
   },
   {
@@ -55,7 +55,7 @@ export const edibleOils: ProductItem[] = [
     slug: "soya-refined-oil",
     description:
       "Refined soya oil traded for business buyers across the food supply chain.",
-    image: "/images/oil-food.jpg",
+    image: "/images/soya-refined-oil.jpg",
     category: "oils",
   },
   {
@@ -63,7 +63,7 @@ export const edibleOils: ProductItem[] = [
     slug: "cotton-refined-oil",
     description:
       "Refined cotton oil handled as part of our edible-oil trading range.",
-    image: "/images/oil-bottles.jpg",
+    image: "/images/cotton-refined-oil.jpg",
     category: "oils",
   },
   {
@@ -71,7 +71,7 @@ export const edibleOils: ProductItem[] = [
     slug: "cottonseed-oil",
     description:
       "Cottonseed oil traded to meet agreed specifications and supply schedules.",
-    image: "/images/oil-glass.jpg",
+    image: "/images/cottonseed-oil.jpg",
     category: "oils",
   },
   {
@@ -79,7 +79,7 @@ export const edibleOils: ProductItem[] = [
     slug: "soya-degummed-oil",
     description:
       "Degummed soya oil traded for processors and commercial buyers.",
-    image: "/images/aisle.jpg",
+    image: "/images/soya-degummed-oil.jpg",
     category: "oils",
   },
   {
@@ -87,7 +87,7 @@ export const edibleOils: ProductItem[] = [
     slug: "yellow-mustard-oil",
     description:
       "Yellow mustard oil sourced through our agricultural trading network.",
-    image: "/images/harvest.jpg",
+    image: "/images/yellow-mustard-oil.jpg",
     category: "oils",
   },
   {
@@ -95,7 +95,7 @@ export const edibleOils: ProductItem[] = [
     slug: "rice-bran-oil",
     description:
       "Rice bran oil traded alongside our wider edible-oil portfolio.",
-    image: "/images/rice.jpg",
+    image: "/images/rice-bran-oil.jpg",
     category: "oils",
   },
 ];
@@ -106,7 +106,7 @@ export const agriculturalSeeds: ProductItem[] = [
     slug: "sesame-seed",
     description:
       "Sesame seed traded as an agricultural commodity according to market requirements.",
-    image: "/images/seeds-spices.jpg",
+    image: "/images/sesame-seed.jpg",
     category: "seeds",
   },
   {
@@ -122,7 +122,7 @@ export const agriculturalSeeds: ProductItem[] = [
     slug: "mustard-seed",
     description:
       "Mustard seed traded for oil and commodity buyers across the market.",
-    image: "/images/harvest.jpg",
+    image: "/images/mustard-seed.jpg",
     category: "seeds",
   },
   {
@@ -130,7 +130,7 @@ export const agriculturalSeeds: ProductItem[] = [
     slug: "yellow-mustard-seed",
     description:
       "Yellow mustard seed handled through our commodity trading activity.",
-    image: "/images/crops.jpg",
+    image: "/images/yellow-mustard-seed.jpg",
     category: "seeds",
   },
 ];

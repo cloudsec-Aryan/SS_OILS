@@ -23,7 +23,7 @@ export default function ProductsPage() {
         eyebrow="Products"
         title="A complete trading catalogue"
         copy="Edible oils, agricultural seeds and food commodities sourced and traded according to market requirements."
-        image="/images/oil-bottles.jpg"
+        image="/images/products-hero.jpg"
       />
 
       <section className="py-20">

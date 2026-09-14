@@ -16,7 +16,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Get in Touch"
         copy="Have a requirement for edible oils, agricultural seeds or other commodities? Connect with us to discuss your trading requirement."
-        image="/images/partnership.jpg"
+        image="/images/contact-hero.jpg"
       />
 
       <section className="py-20">

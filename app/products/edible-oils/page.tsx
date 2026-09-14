@@ -19,7 +19,7 @@ export default function EdibleOilsPage() {
         eyebrow="Edible Oils"
         title="Edible Oils Trading"
         copy="We trade a diverse range of edible oils serving the requirements of businesses across the food and agricultural trading ecosystem."
-        image="/images/oil-glass.jpg"
+        image="/images/edible-oils-hero.jpg"
       />
 
       <section className="py-20">

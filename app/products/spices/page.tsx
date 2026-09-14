@@ -43,7 +43,7 @@ export default function SpicesPage() {
           </FadeIn>
           <FadeIn>
             <div className="grid gap-4 sm:grid-cols-2">
-              {["/images/spices.jpg", "/images/indian-spices.jpg", "/images/seeds-spices.jpg", "/images/market.jpg"].map(
+              {["/images/spices.jpg", "/images/indian-spices.jpg", "/images/spice-seeds.jpg", "/images/spice-market.jpg"].map(
                 (src) => (
                   <div key={src} className="img-zoom relative aspect-square overflow-hidden rounded-sm">
                     <Image src={src} alt="Spices and agricultural food commodities" fill className="object-cover" sizes="25vw" />

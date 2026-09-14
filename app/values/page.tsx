@@ -43,7 +43,7 @@ export default function ValuesPage() {
         eyebrow="Our Values"
         title="How we conduct trading relationships"
         copy="A second-generation trading business is judged by consistency more than slogans."
-        image="/images/business.jpg"
+        image="/images/values-hero.jpg"
       />
 
       <section className="py-20">
