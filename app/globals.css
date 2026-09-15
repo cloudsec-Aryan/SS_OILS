@@ -276,12 +276,12 @@ h3,
 @keyframes preloaderPulse {
   0%,
   100% {
-    transform: scale(0.94);
-    filter: drop-shadow(0 0 6px rgba(201, 162, 39, 0.25));
+    transform: scale(0.96);
+    opacity: 0.95;
   }
   50% {
-    transform: scale(1.04);
-    filter: drop-shadow(0 0 20px rgba(201, 162, 39, 0.6)) drop-shadow(0 0 10px rgba(11, 45, 85, 0.3));
+    transform: scale(1.02);
+    opacity: 1;
   }
 }
 

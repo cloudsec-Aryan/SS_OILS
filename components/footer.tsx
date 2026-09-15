@@ -16,17 +16,16 @@ const quickLinks = [
   { href: "/values", label: "Core Trading Values" },
   { href: "/supply-delivery", label: "Supply & Tanker Logistics" },
   { href: "/contact", label: "Contact & Live Rates" },
+  { href: "/terms", label: "Terms & Conditions" },
 ];
 
-const productLinks = [
-  { href: "/products/edible-oils", label: "Kachi Ghani Mustard Oil" },
-  { href: "/products/edible-oils", label: "Soya Refined Oil (Bulk)" },
-  { href: "/products/edible-oils", label: "Cottonseed & Cotton Refined Oil" },
-  { href: "/products/edible-oils", label: "Rice Bran Oil" },
-  { href: "/products/agricultural-commodities", label: "Sesame Seeds (Til)" },
-  { href: "/products/agricultural-commodities", label: "Groundnut Seeds & Mustard" },
-  { href: "/products/sugar-jaggery-cereals", label: "Commercial Sugar & Natural Jaggery" },
-  { href: "/products/spices", label: "Wholesale Indian Spices" },
+const productCategoryLinks = [
+  { href: "/products/edible-oils", label: "Edible Oils (Mustard, Soya, Cotton)" },
+  { href: "/products/agricultural-commodities", label: "Agricultural Seeds (Sesame Til, Mustard)" },
+  { href: "/products/sugar-jaggery-cereals", label: "Sugar, Jaggery (Gur) & Cereals" },
+  { href: "/products/spices", label: "Wholesale Indian Spices (Haldi, Jeera)" },
+  { href: "/products/edible-oils", label: "Kachi Ghani Mustard Oil (Agmark)" },
+  { href: "/products/agricultural-commodities", label: "Bold Groundnut & Cotton Bales" },
 ];
 
 export function Footer() {
@@ -105,10 +104,10 @@ export function Footer() {
 
         <div>
           <h2 className="text-[0.72rem] font-semibold tracking-[0.18em] text-gold uppercase">
-            Trading Portfolio
+            Product Categories
           </h2>
           <ul className="mt-4 space-y-2 text-sm text-white/75">
-            {productLinks.map((link) => (
+            {productCategoryLinks.map((link) => (
               <li key={link.label}>
                 <Link
                   href={link.href}
@@ -137,16 +136,16 @@ export function Footer() {
             </div>
 
             <div>
-              <p className="text-xs text-white/50 uppercase">Supply Timelines</p>
+              <p className="text-xs text-white/50 uppercase">Trading & Dispatch Desk</p>
               <p className="text-sm text-white/80">
-                Current delivery to ~10–15 days as negotiated. Bulk Tankers, Drums & Bags.
+                Devsar, Bhiwani, Haryana – 127021, India
               </p>
             </div>
 
             <div>
-              <p className="text-xs text-white/50 uppercase">Origin / Coverage</p>
+              <p className="text-xs text-white/50 uppercase">Supply Timelines</p>
               <p className="text-sm text-white/80">
-                Direct Mandi & Mill Sourcing, All-India Logistics.
+                Current delivery to ~10–15 days as negotiated. Bulk Tankers, Drums & Bags.
               </p>
             </div>
           </div>
@@ -168,7 +167,15 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-page flex flex-col items-center justify-between gap-2 py-4 text-xs tracking-wide text-white/50 sm:flex-row">
           <p>© 2026 {COMPANY_NAME}. All Rights Reserved.</p>
-          <p>B2B Edible Oil & Agricultural Commodity Trading</p>
+          <div className="flex items-center gap-4">
+            <Link href="/terms" className="hover:text-gold transition-colors">
+              Terms & Conditions
+            </Link>
+            <span>•</span>
+            <Link href="/contact" className="hover:text-gold transition-colors">
+              Contact Desk
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -4,7 +4,6 @@ import { CtaBand } from "@/components/cta-band";
 import { EnquireButton } from "@/components/enquire-button";
 import { FadeIn } from "@/components/fade-in";
 import { FaqSection } from "@/components/faq-section";
-import { HomeEnquiryPrompt } from "@/components/home-enquiry-prompt";
 import { ProductCard } from "@/components/product-card";
 import {
   edibleOils,
@@ -106,8 +105,6 @@ export default function HomePage() {
 
   return (
     <>
-      <HomeEnquiryPrompt />
-
       {/* Hero Section */}
       <section className="relative isolate min-h-[92svh] overflow-hidden bg-navy-deep sm:min-h-[85vh]">
         <Image
@@ -211,7 +208,7 @@ export default function HomePage() {
             </div>
           </FadeIn>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {featuredProducts.map((product) => (
               <ProductCard key={product.slug} product={product} />
             ))}
@@ -298,17 +295,17 @@ export default function HomePage() {
             </p>
           </FadeIn>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 sm:grid-cols-3 lg:grid-cols-5">
             {sourcing.map((item, index) => (
               <FadeIn key={item.title} delay={index * 50}>
                 <article className="overflow-hidden rounded-sm bg-white ring-1 ring-line">
-                  <div className="img-zoom relative h-40">
+                  <div className="img-zoom relative h-32 sm:h-40">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
                       className="object-cover"
-                      sizes="20vw"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                     />
                   </div>
                   <div className="p-4">
@@ -442,19 +439,19 @@ export default function HomePage() {
             </p>
           </FadeIn>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 md:grid-cols-3">
             {trustCards.map((card) => (
               <article
                 key={card.title}
                 className="overflow-hidden rounded-sm bg-white ring-1 ring-line shadow-xs"
               >
-                <div className="img-zoom relative h-52">
+                <div className="img-zoom relative h-48 sm:h-52">
                   <Image
                     src={card.image}
                     alt={card.title}
                     fill
                     className="object-cover"
-                    sizes="33vw"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
                 <div className="p-5">

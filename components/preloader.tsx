@@ -11,8 +11,8 @@ export function Preloader() {
   useEffect(() => {
     const start = window.setTimeout(() => {
       setLeaving(true);
-      window.setTimeout(() => setVisible(false), 520);
-    }, 1700);
+      window.setTimeout(() => setVisible(false), 420);
+    }, 1100);
     return () => window.clearTimeout(start);
   }, []);
 
@@ -25,18 +25,32 @@ export function Preloader() {
       aria-live="polite"
       aria-label="Loading"
     >
-      <div className="preloader-orbit">
-        <span className="preloader-ring" aria-hidden />
-        <span className="preloader-photo">
-          <Image
-            src="/logo-circle.png"
-            alt={COMPANY_NAME}
-            width={900}
-            height={900}
-            priority
-            unoptimized
+      <div className="flex flex-col items-center justify-center p-6 text-center">
+        <div className="relative mb-5 flex h-28 w-28 items-center justify-center sm:h-32 sm:w-32">
+          {/* Crisp rotating golden ring */}
+          <span
+            className="absolute inset-0 rounded-full border-2 border-gold/20 border-t-gold border-r-navy animate-spin"
+            aria-hidden
           />
-        </span>
+          {/* Crisp Brand Mark */}
+          <div className="relative h-20 w-20 p-2 sm:h-24 sm:w-24">
+            <Image
+              src="/logo-official.png"
+              alt={COMPANY_NAME}
+              fill
+              priority
+              className="object-contain"
+              sizes="128px"
+            />
+          </div>
+        </div>
+
+        <p className="font-display text-lg font-bold tracking-wide text-navy sm:text-xl">
+          SS OIL AND FIBRES
+        </p>
+        <p className="mt-1 text-[0.68rem] font-semibold tracking-[0.2em] text-gold uppercase sm:text-xs">
+          Edible Oils & Agricultural Commodities • Mandi Trading
+        </p>
       </div>
     </div>
   );

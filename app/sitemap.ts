@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/supply-delivery", priority: 0.8, changeFrequency: "monthly" },
     { path: "/values", priority: 0.75, changeFrequency: "monthly" },
     { path: "/contact", priority: 0.85, changeFrequency: "monthly" },
+    { path: "/terms", priority: 0.7, changeFrequency: "monthly" },
   ];
 
   const now = new Date();
