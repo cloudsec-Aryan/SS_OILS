@@ -16,6 +16,7 @@ import { useEnquiry } from "@/lib/enquiry-context";
 
 export function Header() {
   const pathname = usePathname();
+  const isHome = pathname === "/";
   const { openEnquiry } = useEnquiry();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -88,15 +89,17 @@ export function Header() {
               <span>{PHONE_DISPLAY}</span>
             </a>
 
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden items-center gap-1 font-semibold text-emerald-400 transition-colors hover:text-emerald-300 sm:flex"
-              title="Chat on WhatsApp"
-            >
-              <span>WhatsApp Rates</span>
-            </a>
+            {!isHome ? (
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden items-center gap-1 font-semibold text-emerald-400 transition-colors hover:text-emerald-300 sm:flex"
+                title="Chat on WhatsApp"
+              >
+                <span>WhatsApp Rates</span>
+              </a>
+            ) : null}
           </div>
         </div>
       </div>
@@ -170,24 +173,32 @@ export function Header() {
 
         {/* Action Buttons */}
         <div className="flex items-center gap-2 sm:gap-3">
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden items-center gap-1.5 rounded-sm border border-emerald-600/30 bg-emerald-50 px-3 py-2 text-[0.76rem] font-bold text-emerald-800 transition-all hover:bg-emerald-100 lg:inline-flex"
-            aria-label="Direct WhatsApp quote"
-          >
-            <span className="h-2 w-2 rounded-full bg-emerald-500" />
-            WhatsApp Rates
-          </a>
+          {!isHome ? (
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden items-center gap-1.5 rounded-sm border border-emerald-600/30 bg-emerald-50 px-3 py-2 text-[0.76rem] font-bold text-emerald-800 transition-all hover:bg-emerald-100 lg:inline-flex"
+              aria-label="Direct WhatsApp quote"
+            >
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              WhatsApp Rates
+            </a>
+          ) : null}
 
-          <button
-            type="button"
-            className="btn btn-gold hidden px-4 py-2.5 sm:inline-flex"
-            onClick={() => openEnquiry()}
-          >
-            Request Quote
-          </button>
+          {isHome ? (
+            <Link href="/contact" className="btn btn-gold hidden px-4 py-2.5 sm:inline-flex">
+              Contact Desk
+            </Link>
+          ) : (
+            <button
+              type="button"
+              className="btn btn-gold hidden px-4 py-2.5 sm:inline-flex"
+              onClick={() => openEnquiry()}
+            >
+              Request Quote
+            </button>
+          )}
 
           {/* Mobile Hamburger Toggle */}
           <button
@@ -272,26 +283,46 @@ export function Header() {
             >
               📞 Call Desk
             </a>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 rounded-sm border border-emerald-600 bg-emerald-600 py-3 text-xs font-bold text-white shadow-sm"
-            >
-              💬 WhatsApp
-            </a>
+            {!isHome ? (
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1.5 rounded-sm border border-emerald-600 bg-emerald-600 py-3 text-xs font-bold text-white shadow-sm"
+              >
+                💬 WhatsApp
+              </a>
+            ) : (
+              <Link
+                href="/contact"
+                onClick={() => setOpen(false)}
+                className="flex items-center justify-center gap-1.5 rounded-sm border border-line bg-cream py-3 text-xs font-bold text-navy shadow-sm"
+              >
+                Contact Desk
+              </Link>
+            )}
           </div>
 
-          <button
-            type="button"
-            className="btn btn-gold mt-3 w-full"
-            onClick={() => {
-              setOpen(false);
-              openEnquiry();
-            }}
-          >
-            Send Trading Enquiry
-          </button>
+          {isHome ? (
+            <Link
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className="btn btn-gold mt-3 w-full"
+            >
+              Contact Trading Desk
+            </Link>
+          ) : (
+            <button
+              type="button"
+              className="btn btn-gold mt-3 w-full"
+              onClick={() => {
+                setOpen(false);
+                openEnquiry();
+              }}
+            >
+              Send Trading Enquiry
+            </button>
+          )}
         </nav>
       </div>
     </header>

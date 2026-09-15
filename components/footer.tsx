@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   COMPANY_NAME,
   OPERATING_HOURS,
@@ -29,6 +32,8 @@ const productCategoryLinks = [
 ];
 
 export function Footer() {
+  const isHome = usePathname() === "/";
+
   return (
     <footer className="mt-auto bg-navy-deep text-white">
       {/* Top Footer Banner */}
@@ -49,14 +54,20 @@ export function Footer() {
             >
               📞 Call {PHONE_DISPLAY}
             </a>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn border border-emerald-500 bg-emerald-600/90 py-2.5 text-xs text-white hover:bg-emerald-600"
-            >
-              💬 WhatsApp Trading Desk
-            </a>
+            {!isHome ? (
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn border border-emerald-500 bg-emerald-600/90 py-2.5 text-xs text-white hover:bg-emerald-600"
+              >
+                💬 WhatsApp Trading Desk
+              </a>
+            ) : (
+              <Link href="/contact" className="btn btn-outline py-2.5 text-xs">
+                Contact Desk
+              </Link>
+            )}
           </div>
         </div>
       </div>

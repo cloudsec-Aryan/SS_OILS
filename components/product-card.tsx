@@ -5,7 +5,13 @@ import type { ProductItem } from "@/lib/site";
 import { useEnquiry } from "@/lib/enquiry-context";
 import { WHATSAPP_URL } from "@/lib/site";
 
-export function ProductCard({ product }: { product: ProductItem }) {
+export function ProductCard({
+  product,
+  showQuoteActions = true,
+}: {
+  product: ProductItem;
+  showQuoteActions?: boolean;
+}) {
   const { openEnquiry } = useEnquiry();
 
   const productWhatsAppUrl = `${WHATSAPP_URL}&text=${encodeURIComponent(
@@ -60,27 +66,28 @@ export function ProductCard({ product }: { product: ProductItem }) {
           </ul>
         ) : null}
 
-        {/* Action Buttons */}
-        <div className="mt-auto pt-3 flex flex-col gap-1.5 sm:pt-5 sm:flex-row sm:gap-2">
-          <button
-            type="button"
-            className="btn btn-gold w-full py-1.5 px-2 text-[0.68rem] font-bold sm:flex-1 sm:py-2.5 sm:text-xs"
-            onClick={() => openEnquiry(product.name)}
-          >
-            Request Quote
-          </button>
+        {showQuoteActions ? (
+          <div className="mt-auto pt-3 flex flex-col gap-1.5 sm:pt-5 sm:flex-row sm:gap-2">
+            <button
+              type="button"
+              className="btn btn-gold w-full py-1.5 px-2 text-[0.68rem] font-bold sm:flex-1 sm:py-2.5 sm:text-xs"
+              onClick={() => openEnquiry(product.name)}
+            >
+              Request Quote
+            </button>
 
-          <a
-            href={productWhatsAppUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn border border-emerald-600/30 bg-emerald-50 w-full py-1.5 px-2 text-[0.68rem] font-semibold text-emerald-800 hover:bg-emerald-100 sm:w-auto sm:px-3 sm:py-2.5 sm:text-xs text-center"
-            title="Ask rates on WhatsApp"
-            aria-label={`Ask rate on WhatsApp for ${product.name}`}
-          >
-            💬 <span className="sm:hidden">Quote</span><span className="hidden sm:inline">WhatsApp</span>
-          </a>
-        </div>
+            <a
+              href={productWhatsAppUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn border border-emerald-600/30 bg-emerald-50 w-full py-1.5 px-2 text-[0.68rem] font-semibold text-emerald-800 hover:bg-emerald-100 sm:w-auto sm:px-3 sm:py-2.5 sm:text-xs text-center"
+              title="Ask rates on WhatsApp"
+              aria-label={`Ask rate on WhatsApp for ${product.name}`}
+            >
+              💬 <span className="sm:hidden">Quote</span><span className="hidden sm:inline">WhatsApp</span>
+            </a>
+          </div>
+        ) : null}
       </div>
     </article>
   );

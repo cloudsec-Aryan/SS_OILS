@@ -1,8 +1,12 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { WHATSAPP_URL } from "@/lib/site";
 
 export function FloatingEnquiry() {
+  const pathname = usePathname();
+  if (pathname === "/") return null;
+
   return (
     <div className="fixed right-3.5 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 sm:right-6 sm:bottom-6">
       {/* WhatsApp Quick Chat */}

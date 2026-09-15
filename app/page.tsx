@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CtaBand } from "@/components/cta-band";
-import { EnquireButton } from "@/components/enquire-button";
 import { FadeIn } from "@/components/fade-in";
 import { FaqSection } from "@/components/faq-section";
 import { ProductCard } from "@/components/product-card";
@@ -10,8 +8,6 @@ import {
   agriculturalSeeds,
   foodCommodities,
   productCategories,
-  PHONE_DISPLAY,
-  WHATSAPP_URL,
 } from "@/lib/site";
 
 const stats = [
@@ -72,7 +68,7 @@ const reasons = [
   },
   {
     title: "Reliable B2B Communication",
-    copy: "Direct access to our trading desk via phone and WhatsApp with prompt updates on market fluctuations and dispatch milestones.",
+    copy: "Direct access to our trading desk via phone with prompt updates on market fluctuations and dispatch milestones.",
   },
 ];
 
@@ -141,24 +137,14 @@ export default function HomePage() {
             competitive mandi parity, and coordinated nationwide dispatch.
           </p>
 
-          {/* Action CTAs */}
           <div className="mt-7 flex w-full flex-col gap-3 sm:mt-8 sm:w-auto sm:flex-row sm:items-center sm:flex-wrap">
-            <EnquireButton className="btn btn-gold w-full sm:w-auto shadow-lg shadow-gold/15">
-              Request Mandi Rates
-            </EnquireButton>
-
-            <Link href="/products" className="btn btn-outline w-full sm:w-auto">
+            <Link href="/products" className="btn btn-gold w-full sm:w-auto shadow-lg shadow-gold/15">
               Explore 17+ Products
             </Link>
 
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn flex items-center justify-center gap-2 border border-emerald-500 bg-emerald-600/90 text-white hover:bg-emerald-600 w-full sm:w-auto"
-            >
-              <span>💬 Instant WhatsApp Quote</span>
-            </a>
+            <Link href="/contact" className="btn btn-outline w-full sm:w-auto">
+              Contact Trading Desk
+            </Link>
           </div>
         </div>
       </section>
@@ -210,7 +196,7 @@ export default function HomePage() {
 
           <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {featuredProducts.map((product) => (
-              <ProductCard key={product.slug} product={product} />
+              <ProductCard key={product.slug} product={product} showQuoteActions={false} />
             ))}
           </div>
         </div>
@@ -473,11 +459,6 @@ export default function HomePage() {
         title="B2B Trading & Procurement FAQs"
         eyebrow="Answers for Commercial Buyers"
         description="Clear details on minimum orders, bulk packaging, delivery schedules, and price discovery."
-      />
-
-      <CtaBand
-        title="Discuss Your Commodity Requirement"
-        copy={`Contact our trading desk at ${PHONE_DISPLAY} or send an enquiry for today's market rates.`}
       />
     </>
   );
