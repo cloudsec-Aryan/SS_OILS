@@ -28,10 +28,10 @@ export function Footer() {
             <Image
               src="/logo-footer.png"
               alt={COMPANY_NAME}
-              width={598}
-              height={392}
+              width={746}
+              height={444}
               unoptimized
-              className="h-24 w-auto rounded-sm bg-white object-contain p-2 sm:h-28 md:h-32"
+              className="footer-logo h-20 w-auto object-contain sm:h-24 md:h-28"
             />
           </Link>
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/70">

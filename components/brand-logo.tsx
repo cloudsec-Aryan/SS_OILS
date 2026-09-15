@@ -12,8 +12,8 @@ export function BrandLogo({
     <Image
       src="/logo-official.png"
       alt={COMPANY_NAME}
-      width={536}
-      height={348}
+      width={746}
+      height={444}
       priority={priority}
       unoptimized
       className={`bg-transparent object-contain ${className}`}
